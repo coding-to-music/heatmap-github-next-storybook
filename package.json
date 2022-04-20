@@ -1,5 +1,5 @@
 {
-  "name": "insights-view",
+  "name": "heatmap-github-next-storybook",
   "version": "1.0.0",
   "license": "Apache-2.0",
   "author": {
@@ -7,6 +7,12 @@
     "email": "zhyd007@gmail.com",
     "url": "https://github.com/007tom"
   },
+  "engines": {
+    "node": "16.x"
+  },
+  "cacheDirectories": [
+    "node_modules"
+  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -15,7 +21,8 @@
     "prettier": "prettier --write src/**/*.{ts,tsx}",
     "prepare": "husky install",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "deploy": "git add . && git commit -m Heroku && git push && git push heroku && heroku logs --tail --remote heroku"
   },
   "dependencies": {
     "@emotion/react": "^11.7.1",
