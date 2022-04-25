@@ -20,10 +20,12 @@
     "start": "next start",
     "lint": "next lint --no-cache",
     "prettier": "prettier --write src/**/*.{ts,tsx}",
-    "prepare": "husky install",
+    "old-prepare": "husky install",
+    "test": "npm run lint",
+    "old-test-all": "npm run check-format && npm run check-lint && npm run check-types && npm run build",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "deploy": "git add . && git commit -m Heroku && git push && git push heroku && heroku logs --tail --remote heroku"
+    "deploy": "git add . && git commit -m Heroku --no-verify && git push && git push heroku && heroku logs --tail --remote heroku"
   },
   "dependencies": {
     "@emotion/react": "^11.7.1",
@@ -58,7 +60,7 @@
     "eslint-config-next": "12.0.7",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-storybook": "^0.5.5",
-    "husky": "^7.0.4",
+    "husky": "^7.0.0",
     "lint-staged": "^12.1.2",
     "prettier": "2.5.1",
     "typescript": "^4.5.4",
