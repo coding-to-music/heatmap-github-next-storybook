@@ -45,6 +45,7 @@ Installing plugin @renderinc/heroku-import... installed v1.1.0
 
 ```java
 heroku render:import --app heatmap-github-next-storybook
+
 ```
 
 Output:
